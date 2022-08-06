@@ -1,12 +1,14 @@
-                      <div style=" width: 30% ; background-color:yellow ; padding : 10px ; float: left; margin: 0px 10px 0px 10px">
-                        {% if user == s_product.seller %}
-                        <a href="{% url 'product:product_update' s_product.id %}">Edit</a>
-                        {% endif %}
-                        <p>seller : {{s_product.seller.username}} 
-                          <span>
-                            {% if user == s_product.seller %}
-                            (YOU)
-                            {% endif %}
-                          </span>
-                        </p>
-                      </div>
+<div style=" width: 50% ; background-color:white ; padding : 10px ; float: left; margin: 0px 10px 0px 10px">
+                        
+                  {% if buy_form1 %}
+                      <form action="">
+                        {{buy_form1.as_p}}
+                        {% csrf_token %}
+                        <input type="submit" value="Buy it">
+                      </form>
+                  {% else %}
+                      <a href="">اطلاع بده</a>
+                  {% endif %}
+              
+               
+                </div >
