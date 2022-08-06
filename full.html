@@ -1,0 +1,18 @@
+<div style=" width: 50% ; background-color:white ; padding : 10px ; float: left; margin: 0px 10px 0px 10px">
+                        
+    {% if buy_form1 %}
+        <form action="">
+          {{buy_form1.as_p}}
+          {% csrf_token %}
+          <input type="submit" value="Buy it">
+        </form>
+    {% else %}
+        <a href="">اطلاع بده</a>
+    {% endif %}
+
+    
+    
+   
+
+
+  </div >
