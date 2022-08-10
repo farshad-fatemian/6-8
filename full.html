@@ -1,14 +1,12 @@
-<div style=" width: 50% ; background-color:white ; padding : 10px ; float: left; margin: 0px 10px 0px 10px">
+<div>
                         
-                  {% if buy_form1 %}
-                      <form action="">
-                        {{buy_form1.as_p}}
-                        {% csrf_token %}
-                        <input type="submit" value="Buy it">
-                      </form>
-                  {% else %}
-                      <a href="">اطلاع بده</a>
-                  {% endif %}
-              
-               
-                </div >
+                {% if user.is_authenticated %}
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  {{form.as_p}}
+                  <input type="submit" class="u-btn u-button-style u-btn-1" value="comment now">
+                </form>
+                  
+                {% endif %}
+                 
+</div>
