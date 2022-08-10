@@ -1,12 +1,7 @@
-<div>
-                        
-                {% if user.is_authenticated %}
-                <form action="" method="POST">
-                  {% csrf_token %}
-                  {{form.as_p}}
-                  <input type="submit" class="u-btn u-button-style u-btn-1" value="comment now">
-                </form>
-                  
-                {% endif %}
-                 
-</div>
+<span>
+
+                        {% if user == comment.writer %}
+                          <a href="{% url 'product:comment_update' comment.id %}" style="color:red ; background-color:black">Edit</a>
+                        {% endif %}
+                      
+</span>
